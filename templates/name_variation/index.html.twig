@@ -6,10 +6,12 @@
 
 {% block body %}
 	<main class="container">
+		<h1>Name Variation</h1>
 		<div>
 			<label class="label" for="component-name">Enter your name</label>
 			<form method="get" action="/">
 				<input type="text" name="name" class="input" placeholder="your name" id="your-name" autocomplete="off"/>
+				<input class="btn" type="submit" value="Submit">
 			</form>
 		</div>
 
@@ -28,7 +30,7 @@
 
 				{% for key,value in nameDetails %}
 					<tr>
-						<td>{{ key| replace({'-': ''}) | title }}</td>
+						<td>{{ key| replace({'-': ' '}) | title }}</td>
 						<td>{{ value }}</td>
 					</tr>
 				{% endfor %}
@@ -37,4 +39,10 @@
 		{% endif %}
 
 	</main>
+{% endblock %}
+
+{% block footer %}
+	<footer>
+		<small>Copyright &copy; Alex Tran</small>
+	</footer>
 {% endblock %}
